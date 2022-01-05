@@ -50,8 +50,8 @@ deploy:
   - provider: codedeploy
     access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
     secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
-    bucket: 12team # S3 버킷
-    key: deploy/springboot-test.zip # 빌드 파일을 압축해서 전달
+    bucket: 12team-build # S3 버킷
+    key: 12team.zip # 빌드 파일을 압축해서 전달
     bundle_type: zip # 압축 확장자
     application: team12 # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
     deployment_group: team12-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
