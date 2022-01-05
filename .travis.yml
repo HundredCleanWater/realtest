@@ -44,8 +44,6 @@ deploy:
     acl: private # zip 파일 접근을 private으로
     local_dir: deploy # before_deploy에서 생성한 디렉토리로 이동한다. 해당 위치의 파일만 이동시킨다.
     wait-until-deployed: true
-    on:
-      branch: main
 
   ## 새롭게 추가된 부분
   - provider: codedeploy
@@ -55,11 +53,10 @@ deploy:
     key: springboot-test.zip # 빌드 파일을 압축해서 전달
     bundle_type: zip # 압축 확장자
     application: team12 # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
-    deployment_group: team12-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
+    deplyment_group: team12-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     wait-until-deployed: true
-    on:
-      branch: main
+
 
 ## 새롭게 추가된 부분
 
