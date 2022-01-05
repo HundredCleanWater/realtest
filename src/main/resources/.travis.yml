@@ -1,0 +1,16 @@
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+  before_install:
+    - echo "start creating an image"
+    - docker build -t cleanwater/docker-react-app -f Dockerfile.dev
+
+  script:
+    - docker run -e CI=ture cleanwater/docker-react-app npm run test -- --coverage
+
+  after_success:
+    - echo "Test success"
