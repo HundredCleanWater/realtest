@@ -33,6 +33,7 @@ before_deploy:
   - mv springboot-test.zip deploy/springboot-test.zip
 
 # 외부 서비스와 연동할 행위들을 선언한다.
+
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY # Travis settings에 설정된 값
