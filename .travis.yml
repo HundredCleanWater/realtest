@@ -58,8 +58,7 @@ deploy:
     deployment_group: team12-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     wait-until-deployed: true
-    on:
-      branch: main
+
 ## 새롭게 추가된 부분
 
 # CI 실행 완료 시 작성한 이메일로 알람
