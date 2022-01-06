@@ -61,7 +61,7 @@ deploy:
       repo: HundredCleanWater/realtest
       branch: main
 
-## 새롭게 추가된 부분
+## 새롭게 추가된 부분!
 
 # CI 실행 완료 시 작성한 이메일로 알람
 notifications:
