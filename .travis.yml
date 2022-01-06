@@ -35,31 +35,31 @@ before_deploy:
 # 외부 서비스와 연동할 행위들을 선언한다.
 deploy:
   - provider: s3
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: team12-bucket # S3 버킷
-  region: ap-northeast-2
-  skip_cleanup: true
-  acl: private # zip 파일 접근을 private으로
-  wait-until-deployed: true
-  on:
-    repo: HundredCleanWater/realtest
-    branch: main
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
+    bucket: team12-bucket # S3 버킷
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private # zip 파일 접근을 private으로
+    wait-until-deployed: true
+    on:
+      repo: HundredCleanWater/realtest
+      branch: main
 
   ## 새롭게 추가된 부분
   - provider: codedeploy
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: team12-bucket # S3 버킷
-  key: springboot-test.zip # 빌드 파일을 압축해서 전달
-  bundle_type: zip # 압축 확장자
-  application: team12-api # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
-  deployment_group: team12-api-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
-  region: ap-northeast-2
-  wait-until-deployed: true
-  on:
-    repo: HundredCleanWater/realtest
-    branch: main
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
+    bucket: team12-bucket # S3 버킷
+    key: springboot-test.zip # 빌드 파일을 압축해서 전달
+    bundle_type: zip # 압축 확장자
+    application: team12-api # 웹 콘솔에서 등록한 CodeDeploy 어플리케이션
+    deployment_group: team12-api-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
+    region: ap-northeast-2
+    wait-until-deployed: true
+    on:
+      repo: HundredCleanWater/realtest
+      branch: main
 ## 새롭게 추가된 부분
 
 # CI 실행 완료 시 작성한 이메일로 알람
