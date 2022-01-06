@@ -43,7 +43,6 @@ deploy:
     acl: private # zip 파일 접근을 private으로
     wait-until-deployed: true
     on:
-      repo: HundredCleanWater/realtest
       branch: main
 
   ## 새롭게 추가된 부분
@@ -58,11 +57,10 @@ deploy:
     region: ap-northeast-2
     wait-until-deployed: true
     on:
-      repo: HundredCleanWater/realtest
       branch: main
 ## 새롭게 추가된 부분
 
-# CI 실행 완료 시 작성한 이메일로 알람
+# CI 실행 완료 시 작성한 이메일로 알람!
 notifications:
   email:
     recipients:
