@@ -1,16 +1,15 @@
 version: 0.0
-  os: linux
-  files:
-    - source:  /
-      destination: /home/ubuntu/app/zip
-      overwrite: yes
-  permissions:
-    - object: /
-      pattern: "**"
-      owner: ubuntu
-      group: ubuntu
-  hooks:
-    ApplicationStart:
-      - location: deploy.sh
-        timeout: 60
-        runas: ubuntu
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/app/zip/
+#  permissions:
+#    - object: /
+#      pattern: "**"
+#      owner: ubuntu
+#      group: ubuntu
+#  hooks:
+#    ApplicationStart:
+#      - location: deploy.sh
+#        timeout: 60
+#        runas: ubuntu
